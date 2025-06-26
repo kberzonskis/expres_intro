@@ -8,6 +8,10 @@ body * {
 body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
    
-  background-color: #efd395;
+ 
   color: #260707;
+  background-image: url('/public/img/foto14.jpg');
 }
+  .logo {
+    width: 10%;
+  }
