@@ -11,8 +11,8 @@ export class PageAbout extends PageTemplate  {
     }
        
     return   ` <h1>SVEIKI DRAUGAI</h1> 
-    <p>Šis yra paprastas ABOUT.</p>
-   
+    <p><i class="fa fa-home"></i> Šis yra paprastas ABOUT.</p>
+
          <ul>${linksHTML}<ul>`
        
 

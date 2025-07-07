@@ -3,7 +3,8 @@ export class PageTemplate {
         this.req = req;
         this.asideVisible = true;
         this.pageType = 'fullPage';
-        this.pageJS = '';} 
+        this.pageJS = '';
+    } 
 
 head() { return ` <head>
    
@@ -31,10 +32,10 @@ head() { return ` <head>
 
 
      <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/vendor/font-awesome.css">
     <link rel="stylesheet" href="/css/vendor/font-awesome.min.css">
-</head> `} ; 
-    
-   
+</head> `} ;
+
 
 
     main () { return 'Content....'}
@@ -43,53 +44,48 @@ head() { return ` <head>
     
     header() {
              return `<header>
-     
-        <nav>
-        
-            <ul>
-                <img class="logo" src="/img/foto14.jpg" alt="logo" />
+        <img class="logo" src="/img/foto14.jpg" alt="logo" />
+        <nav>  
                 <a href="/">Home</a>
                 <a href="/about">About</a>
+                <a href="/services">Services</a>
                 <a href="/register">Register</a>
                 <a href="/login">Login</a>
-
-            </ul>
         </nav>
     </header>`;} 
 
   headerAuth() {
              return `<header>
-     
+        <img class="logo" src="/img/foto14.jpg" alt="logo" />
         <nav>
-            <ul>
-                <img class="logo" src="/img/foto14.jpg" alt="logo" />
-
-                <a href="/register">Register</a>
-                <a href="/login">Login</a>
-            </ul>
+             <a href="/register">Register</a>
+             <a href="/login">Login</a>
         </nav>
     </header>`;} 
 
 
-    script() { if (this.pageJS ==='') { return ''; }
+    script() { if (!this.pageJS) { return ''; }
         
-        return `<script src="/js/main.js" type = "module" </script>`; }
+        return `<script src= '/js/${this.pageJS}.js' type = "module"></script>`; }
 
 
 
     footer() {  return `<footer>
-        <p>© 2025 My Website</p>
+       
         <ul>
        
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/register">Register</a>
                 <a href="/login">Login</a>
-          
-            <li><a href="https://www.facebook.com">Facebook</a></li>
-            <li><a href="https://www.twitter.com">Twitter</a></li>
-            <li><a href="https://www.instagram.com">Instagram</a></li>
-        </ul>
+         </ul> 
+
+            <a>
+            <li><i class="fa fa-facebook"></i>facebook</li>
+            <li><i class="fa fa-twitter"></i>Twiter</li>
+            <li><i class="fa fa-instagram"></i>Instagram</li>
+            </a>
+            <p>© 2025 My Website</p>
             </footer>` ;} 
 
 
@@ -104,7 +100,7 @@ head() { return ` <head>
     render() 
     
     
-{  return  `<!DOCTYPE html>
+{  return  `
 <html lang="en">
 ${this.head()}
 <body>
