@@ -1,13 +1,6 @@
 
 import express from 'express'; 
-
-
-import { PageHome } from './pages/PageHome.js';
-import { PageServices } from './pages/PageServices.js';
-import { PageAbout } from './pages/PageAbout.js';
 import { Page404 } from './pages/Page404.js';
-import { PageRegister } from './pages/PageRegister.js';
-import { PageLogin } from './pages/PageLogin.js';
 import { publicRouter } from './routers/publicRouter.js';
 import { publicApiRouter } from './routers/publicApiRouter.js';
 

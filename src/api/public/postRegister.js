@@ -30,10 +30,10 @@ export function postRegister(req,res) {
 
 
 
-
 import { IsValid } from "../../lib/IsValid.js";
+import { connection } from "../../db.js";
 
-export function postRegister(req, res) {
+export async function postRegister(req, res) {
     const [err, msg] = IsValid.fields(req.body, {
         username: 'username',
         email: 'email',
@@ -47,8 +47,13 @@ export function postRegister(req, res) {
             msg: msg,
         });
     }
+const { username, email, password} = req.body;
 
-    console.log(req.body);
+try { const sql = 'SELECT * FROM users;';
+    const response = await connection.query(sql)
+
+
+} catch (error) { }
 
     return res.json({
         status: 'success',
