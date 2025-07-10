@@ -49,11 +49,14 @@ export async function postRegister(req, res) {
     }
 const { username, email, password} = req.body;
 
-try { const sql = 'SELECT * FROM users;';
-    const response = await connection.query(sql)
+try { const sql = 'INSERT INTO users(username, email, password) VALUES (?,?,?);';
+    const response = await connection.execute(sql,[username, email, password])
+  console.log(response);
+  
 
-
-} catch (error) { }
+} catch (error) {console.log(error) }
+   ;
+      
 
     return res.json({
         status: 'success',
