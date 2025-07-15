@@ -100,6 +100,20 @@ export class IsValid {
         } 
 
         static email(text) { 
-            return [false, '']
+            
         }
+
+      static noEmptyString(text) { 
+        if (typeof text !== 'string') { 
+            return [true, 'Turi buti tekstas'] 
+        }
+
+      if (text.length === 0) { 
+        return [true, 'Tekstas turi buti ne tuscias']
+      }
+         
+       return [false, '']}
+      
+
     }
+  

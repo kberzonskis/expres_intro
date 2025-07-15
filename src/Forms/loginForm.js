@@ -1,11 +1,11 @@
-export function loginForm ()  
+export function loginForm()  
 
 { 
    return `    <form>
                    
                 <div>
-                        <label for="username_or_email" >Username or Email</label>
-                        <input id="username_or_email" type="text"  required>
+                        <label for="username">Username</label>
+                        <input id="username" type="text"  required>
                     </div>
                    
                     <div>
