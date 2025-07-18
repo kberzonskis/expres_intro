@@ -100,7 +100,8 @@ head() { return ` <head>
     render() 
     
     
-{  return  `
+{  
+return  `
 <html lang="en">
 ${this.head()}
 <body>
@@ -109,13 +110,10 @@ ${this.pageType === 'fullPage' ?  this.header() : this.headerAuth() }
 ${this.asideVisible ? this.aSide () : ''}
 <main>
  ${this.main()}
-
 </main>
-    
 ${this.pageType === 'fullPage' ? this.footer() : this.footerAuth() }
 ${this.script()}
 </body>
-
 </html> `;
 }
 

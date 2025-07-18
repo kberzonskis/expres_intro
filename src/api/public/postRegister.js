@@ -1,8 +1,8 @@
-import { response } from "express";
 import { connection } from "../../db.js"
 import { IsValid } from "../../lib/IsValid.js";
 import { randomString } from "../../lib/randomString.js";
 import { hash } from "../../lib/hash.js";
+
 export async function postRegister(req, res) {
     const [err, msg] = IsValid.fields(req.body, {
         username: 'username',
@@ -49,7 +49,7 @@ export async function postRegister(req, res) {
  
     try {
         const sql = `INSERT INTO users (username, email,salt, password_hash) VALUES (?,?, ?, ?);`;
-        const [response] = await connection.execute(sql, [ username, email, password,passwordHash]);
+        const [response] = await connection.execute(sql, [ username, email, salt,passwordHash]);
  
                 if (response.affectedRows !== 1) {
             return res.status(500).json({
