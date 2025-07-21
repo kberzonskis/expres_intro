@@ -1,7 +1,7 @@
  
 
-import { PageTemplate } from '../template/PageTemplate.js';
-import {loginForm} from '../Forms/loginForm.js'; 
+import { PageTemplate } from '../../template/PageTemplate.js';
+import {loginForm} from '../../Forms/loginForm.js'; 
 
 export class PageLogin extends PageTemplate {
   constructor(req) {
@@ -11,10 +11,11 @@ export class PageLogin extends PageTemplate {
     this.asideVisible = false; // No aside for registration page
   }
   main() {return  `
-    
+     
             ${loginForm()} 
-    
+    <a href="/">back home</a>
         `
+        
   }
 }
 

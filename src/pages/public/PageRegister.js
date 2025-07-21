@@ -1,5 +1,5 @@
-import { PageTemplate } from '../template/PageTemplate.js';
-import { registerForm } from '../Forms/registerForm.js'
+import { PageTemplate } from '../../template/PageTemplate.js';
+import { registerForm } from '../../Forms/registerForm.js'
 
 export class PageRegister extends PageTemplate {
   constructor(req) {
