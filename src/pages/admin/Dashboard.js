@@ -3,7 +3,8 @@ import { PageTemplate } from "../../template/PageTemplate.js";
 export class PageDashboard extends PageTemplate {  
 constructor(req) {
     super(req);
-    this.pageJS = 'main'
+   // this.pageJS = 'main'
+    this.pageType = 'shortPage';
     this.asideVisible = false;
   }
   main() {
