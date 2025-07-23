@@ -1,10 +1,11 @@
 import  {PageTemplate} from '../../template/PageTemplate.js';
 export class PageAbout extends PageTemplate  {
     constructor(req)  {
-    super(req); }
+    super(req);
+  this.pageHeader ='fullPage'; }
 
     main() 
-    {  const links = ['Home', 'About', 'Register'];
+    {  const links = ['Home', 'About', 'Register',];
     let linksHTML = ''; 
     for ( const link of links) {
        linksHTML += `<li><a>${link}</a></li>`;

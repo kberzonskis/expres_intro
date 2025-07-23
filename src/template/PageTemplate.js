@@ -56,7 +56,7 @@ head() { return ` <head>
 
   headerAuth() {
              return `<header>
-        <img class="logo" src="/img/foto14.jpg" alt="logo" />
+        
         <nav>
              <a href="/register">Register</a>
              <a href="/login">Login</a>
@@ -104,8 +104,10 @@ head() { return ` <head>
 return  `
 <html lang="en">
 ${this.head()}
+
+
 <body>
-${this.pageType === 'fullPage' ?  this.header() : this.headerAuth() }
+${this.pageHeader === 'fullPage' ?  this.header() : this.headerAuth() }
    
 ${this.asideVisible ? this.aSide () : ''}
 <main>

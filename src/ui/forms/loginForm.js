@@ -1,16 +1,26 @@
-export function loginForm()  
+import { NODE_ENV } from  "../../env.js";
 
-{ 
+export function loginForm()  {
+
+let email = '';
+let password = '';
+
+if (NODE_ENV === 'dev') {
+
+email = 'pirmas';
+password = 'pirmas@pirmas.lt';
+
+}
    return `    <form>
                    
                 <div>
                         <label for="username">Username</label>
-                        <input id="username" type="text"  required>
+                        <input value="${email}" id="username" type="text"  required>
                     </div>
                    
                     <div>
                         <label for="password" class="form-label">Password</label>
-                        <input id="password" type="password" required>
+                        <input value="${password}" id="password" type="password" required>
                     </div>
                    
                     <div>

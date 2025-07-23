@@ -2,6 +2,7 @@ import { connection } from "../../db.js"
 import { IsValid } from "../../lib/IsValid.js";
 import { hash } from "../../lib/hash.js";
 import { randomString } from "../../lib/randomString.js";
+import { COOKIE_MAX_AGE } from "../../env.js";
  
 export async function postLogin(req, res) {
     const [err, msg] = IsValid.fields(req.body, {
@@ -85,9 +86,9 @@ try {
 
 
     const cookieParams = [ 
-        `loginToken= ${loginTokenString}`, 
+        'loginToken= ' + loginTokenString, 
         'domain=localhost', 
-        'max-age=100', 
+        'max-age= ' + COOKIE_MAX_AGE, 
         'HttpOnly', 
         'path=/', 
         'Secure', 

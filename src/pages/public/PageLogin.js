@@ -1,7 +1,7 @@
  
 
 import { PageTemplate } from '../../template/PageTemplate.js';
-import {loginForm} from '../../Forms/loginForm.js'; 
+import {loginForm} from '../../ui/forms/loginForm.js'; 
 
 export class PageLogin extends PageTemplate {
   constructor(req) {
