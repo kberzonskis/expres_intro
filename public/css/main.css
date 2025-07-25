@@ -14,7 +14,7 @@ body {
 
 }
   .logo {
-    width: 10%;
+    width: 20%;
   }
 
 
@@ -123,4 +123,19 @@ img {
   font-size: 1.5rem;
   color: #c90f16;
   font-weight: bold;
+}
+
+.bodyDash { 
+background-color: #eee3f5;
+
+}
+.bodyPage { 
+
+  background-color: #f1f1ce;
+}
+.logo1 { 
+
+width: 30%;
+border-radius: 4px;
+
 }

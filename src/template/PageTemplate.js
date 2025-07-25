@@ -49,20 +49,28 @@ head() { return ` <head>
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/services">Services</a>
-                <a href="/register">Register</a>
-                <a href="/login">Login</a>
+                 ${this.userMeniu()}
+        
+
+                
         </nav>
     </header>`;} 
 
   headerAuth() {
              return `<header>
         
-        <nav>
-             <a href="/register">Register</a>
-             <a href="/login">Login</a>
-        </nav>
+        
+           
+      
     </header>`;} 
 
+    userMeniu() { 
+ return `<nav>
+             <a href="/register">Register</a>
+             <a href="/login">Login</a>
+        </nav>`
+
+    }
 
     script() { if (!this.pageJS) { return ''; }
         
@@ -106,7 +114,7 @@ return  `
 ${this.head()}
 
 
-<body>
+<body class= "bodyPage">
 ${this.pageHeader === 'fullPage' ?  this.header() : this.headerAuth() }
    
 ${this.asideVisible ? this.aSide () : ''}

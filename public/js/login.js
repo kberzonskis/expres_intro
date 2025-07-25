@@ -23,6 +23,11 @@ if (formDOM) {
         })
             .then(res => res.json())
             .then(data => {
+                if ( data.status === 'success' && data.action === 'redirect') { 
+                    location.href = data.href; 
+                } 
+              
+
                 console.log(data);
             })
             .catch(console.error); 

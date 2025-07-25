@@ -99,6 +99,8 @@ try {
        .json ({ 
           status: 'success', 
           msg: 'Tu buvai sekmingai prijungtas prie sistemos (su cookie)', 
+          action: 'redirect', 
+          href:'/admin',
 
        })
 
