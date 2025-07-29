@@ -37,6 +37,7 @@ head() { return `
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/vendor/font-awesome.css">
     <link rel="stylesheet" href="/css/vendor/font-awesome.min.css">
+    
 </head> `} ;
 
 main () { return 'Content....'}
@@ -56,7 +57,7 @@ return `<header>
 
 headerAuth() {
 return `<header>
-
+    
     <a href="/">Home</a>
     <a href="/about">About</a>
 
@@ -69,6 +70,10 @@ return `<nav>
 </nav>`
 
 }
+
+
+
+
 
 script() { if (!this.pageJS) { return ''; }
 
@@ -89,14 +94,22 @@ footer() { return `<footer>
         <li><i class="fa fa-twitter"></i>Twiter</li>
         <li><i class="fa fa-instagram"></i>Instagram</li>
     </a>
+
+
+
     <p>© 2025 My Website</p>
+   
 </footer>` ;}
 
 footerAuth() { return `<footer>
 
 
+
+
     <p>© 2025 My Website</p>
-    <img class="logo1" src="/img/foto13.jpg" alt="logo" />
+    
+ 
+
 
 </footer>` ;}
 
@@ -116,8 +129,11 @@ ${this.head()}
 
     ${this.asideVisible ? this.aSide () : ''}
     <main>
+    
+      
         ${this.main()}
-    </main>
+    </main>  
+    
     ${this.pageType === 'fullPage' ? this.footer() : this.footerAuth() }
     ${this.script()}
 </body>
