@@ -49,7 +49,7 @@ head() { return ` <head>
                 <a href="/">Home</a>
                 <a href="/about">About</a>
                 <a href="/services">Services</a>
-                 ${this.userMeniu()}
+                                ${this.userMeniu()}
         
 
                 
@@ -57,7 +57,8 @@ head() { return ` <head>
     </header>`;} 
 
   headerAuth() {
-             return `<header>
+             return `<header> 
+             <a href="/admin">Dasboard</a>
         
         
            
@@ -68,6 +69,7 @@ head() { return ` <head>
  return `<nav>
              <a href="/register">Register</a>
              <a href="/login">Login</a>
+             <a href="/admin">Dasboard</a>
         </nav>`
 
     }

@@ -13,6 +13,7 @@ export class PageRegister extends PageTemplate {
   main() {  return  ` 
           ${registerForm()}
           <a href="/">back home</a>
+          <a href="/login">Login</a>
                       `
 
          

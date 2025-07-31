@@ -14,6 +14,9 @@ export class PageLogin extends PageTemplate {
      
             ${loginForm()} 
     <a href="/">back home</a>
+    <a href="/register">Register</a>
+
+
         `
         
   }

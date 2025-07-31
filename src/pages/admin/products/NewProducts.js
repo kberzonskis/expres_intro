@@ -1,70 +1,60 @@
 import { AdminTemplate } from "../../../template/AdminTemplate.js";
+import {COOKIE_MAX_AGE} from "../../../env.js"
 
 
 export class NewProducts extends AdminTemplate {
-    
-    
-    constructor(req) {
-        super(req);
+
+constructor(req) {
+super(req);
 
 this.pageType = '';
 this.asideVisible = false;
 this.pageHeader ='';
-       
-    }
 
-    main() {
-        return `
-            <main>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-12">
-                            <h1 class="display-5">New product</h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="container">
-                    <div class="row">
-                        <form class="col-12 col-md-9 col-lg-6">
-                            <div class="mb-3">
-                                <label for="title" class="form-label">Title</label>
-                                <input type="text" class="form-control" id="title" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="url" class="form-label">Url slug</label>
-                                <input type="text" class="form-control" id="url" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="description" class="form-label">Description</label>
-                                <textarea class="form-control" id="description"></textarea>
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Status</label>
-                                <div class="form-check">
-                                    <input type="radio" name="radios" class="form-check-input" id="status_published" required>
-                                    <label class="form-check-label" for="status_published">Published</label>
-                                </div>
-                                <div class="form-check">
-                                    <input type="radio" name="radios" class="form-check-input" id="status_draft" checked required>
-                                    <label class="form-check-label" for="status_draft">Draft</label>
-                                </div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Create</button>
-                        </form>
-                    </div>
-                </div>
-            </main>`;
-    }
 }
 
+main() {
 
+const cookie = this.req.user.login_token_created_at.getTime();
+const secondsLeft = Math.floor(COOKIE_MAX_AGE - (Date.now() - cookie) / 1000);
+const seconds = secondsLeft % 60;
+const minutes = (secondsLeft - seconds) / 60;
 
+if (!this.req.user.isLoggedIn) {
 
+return `
+<p>403- reikia prisijungti</p>
+<a href="/">back home</a>
+<a href="/register">Register</a>
+<a href="/login">Login</a>
+`
+}return `
+<main>
+    <a href="/admin">Dasboard</a <p class="display-6">Likęs sesijos laikas: ${minutes}:${seconds}</p>
 
+    <div>
+        </form>
+        <h1>NEW PRODUCT</h1>
 
-  
+        <form class="">
+          
+            <div class="title">
+                <label for="title" class="title">Product-Title</label>
+                <input type="text" class="" id="title" required>
+            </div>
+            <div class="url">
+                <label for="url" class="url">Url slug</label>
+                <input type="text" class="" id="url" required>
+            </div>
+                                 <div class="decription">
+                <label for="description" class="decription">Product-Description</label>
+                <textarea class="decription1" id="description"></textarea>
+            </div>
 
+                      <button type="submit" class="button">Create</button>
+        </form>
+    </div>
 
-
-
-
+</main>`;
+}
+}

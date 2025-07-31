@@ -19,6 +19,8 @@ if (!this.req.user.isLoggedIn) {
 
 return `
 <p>403- reikia prisijungti</p>
+<a href="/register">Register</a>
+<a href="/login">Login</a>
 <a href="/">back home</a>
 `
 }

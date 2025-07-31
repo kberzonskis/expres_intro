@@ -37,6 +37,8 @@ head() { return `
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/vendor/font-awesome.css">
     <link rel="stylesheet" href="/css/vendor/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    
     
 </head> `} ;
 
