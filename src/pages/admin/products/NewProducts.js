@@ -10,6 +10,7 @@ super(req);
 this.pageType = '';
 this.asideVisible = false;
 this.pageHeader ='';
+this.pageJS= 'new-product'; 
 
 }
 
@@ -46,12 +47,12 @@ return `
                 <label for="url" class="url">Url slug</label>
                 <input type="text" class="" id="url" required>
             </div>
-                                 <div class="decription">
+            <div class="decription">
                 <label for="description" class="decription">Product-Description</label>
-                <textarea class="decription1" id="description"></textarea>
+                <textarea class="decription1" id="description"></required>
             </div>
 
-                      <button type="submit" class="button">Create</button>
+            <button type="submit" class="button">Create</button>
         </form>
     </div>
 

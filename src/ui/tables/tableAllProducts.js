@@ -1,4 +1,45 @@
+import { AllProductsData } from "./AllProductsData.js"
+export function AllsProducts()  {
+    let HTML = '';
+    let nr = 1;
 
+ 
+ for (const AProducts of AllProductsData) 
+    
+    {
+        HTML += `
+
+  <tr>
+    <td>${nr++}</td>
+    <td>${AProducts.title}</td>
+    <td>${AProducts.url_slug}</td>
+    <td>${AProducts.description}</td>
+<td>
+      <a class="bg-blue1" href="/admin/products/${AProducts.url_slug}/edit">Edit</a>
+      <button class="bg-red1" data-url="${AProducts.url_slug}">Delete</button>
+  </td>
+`
+    }
+return `
+
+<table class="redTable">
+<thead>
+  <tr>
+    <th>#</th>
+    <th>Product-Title</th>
+    <th>Url slug</th>
+    <th>Product-Description</th>
+    <th>Action</th>
+  </tr>
+</thead>
+<tbody>${HTML}</tbody>
+</table>
+
+ `}
+    
+    ;
+
+/*
 export function tableProducts() {
     let HTML = '';
     let nr = 1;
@@ -36,4 +77,4 @@ export function tableProducts() {
                 <tbody>${HTML}</tbody>
             </table>
         </div>`;
-}
+} */

@@ -1,5 +1,6 @@
 import { AdminTemplate } from "../../../template/AdminTemplate.js";
 import {COOKIE_MAX_AGE} from "../../../env.js"
+import { AllsProducts } from "../../../ui/tables/tableAllProducts.js";
 
 
 
@@ -29,59 +30,31 @@ return `
 <p>403- reikia prisijungti</p>
 <a href="/">back home</a>
 <a href="/register">Register</a>
-<a href="/login">Login</a>
-`
-}
-        return `
-            <main>
+<a href="/login">Login</a>       <main>
 <a href="/admin">Dasboard</a>
-<p class="display-6">Likęs sesijos laikas: ${minutes}:${seconds}</p>
-<table class="redTable">
-  <thead>
-    <tr>
-      <th>Product-Title</th>
-      <th>Url slug</th>
-      <th>Product-Description</th>
-      <th>Action</th>
-      
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>cell1_1</td>
-      <td>cell2_1</td>
-      <td>cell3_1</td>
-      <td class="">
-              <button class="bg-blue1">Edit</button>
-              <button class="bg-red1">Delete</button>
-            </td>
-      
-    </tr>
-    <tr>
-      <td>cell1_2</td>
-      <td>cell2_2</td>
-      <td>cell3_2</td>
-      <td class="relative p-2 md:p-4 flex justify-center space-x-2">
-              <button class="bg-blue1">Edit</button>
-              <button class="bg-red1">Delete</button>
-            </td>
-      
+<p class="display-6">Likęs sesijos laikas: ${minutes}:${seconds}</p>`
 
-    
-  </tbody>
- 
-</table>
-                     
-            </main>`;
-    }
+};
+         
+
+
+return `
+ <main>
+<p class="display-6">Likęs sesijos laikas: ${minutes}:${seconds}</p>
+
+${AllsProducts()}
+
+</main>`;
 }
 
 
 
 
+}
 
 
-  
+
+
 
 
 
