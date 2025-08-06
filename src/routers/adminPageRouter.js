@@ -6,7 +6,7 @@ import { NewProducts } from '../pages/admin/products/NewProducts.js'
 
 export const adminPageRouter = express.Router();
 
-adminPageRouter.get ('/admin', (req, res) => res.send(new PageDashboard(req).render()));
-adminPageRouter.get ('/admin/newproducts', (req, res) => res.send(new NewProducts(req).render()));
-adminPageRouter.get ('/admin/products', (req, res) => res.send(new AllProducts(req).render()));
+adminPageRouter.get ('/', (req, res) => res.send(new PageDashboard(req).render()));
+adminPageRouter.get ('/newproducts', (req, res) => res.send(new NewProducts(req).render()));
+adminPageRouter.get ('/products', (req, res) => res.send(new AllProducts(req).render()));
 

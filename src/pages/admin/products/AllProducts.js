@@ -15,27 +15,23 @@ this.asideVisible = false;
 this.pageHeader ='';
        
     }
-
 main() {
+if (!this.req.user.isLoggedIn) {
 
+return `
+<p>403- reikia prisijungti</p>
+<a href="/register">Register</a>
+<a href="/login">Login</a>
+<a href="/">back home</a>
+`
+}
 
 const cookie = this.req.user.login_token_created_at.getTime();
 const secondsLeft = Math.floor(COOKIE_MAX_AGE - (Date.now() - cookie) / 1000);
 const seconds = secondsLeft % 60;
 const minutes = (secondsLeft - seconds) / 60;
 
-        if (!this.req.user.isLoggedIn) {
 
-return `
-<p>403- reikia prisijungti</p>
-<a href="/">back home</a>
-<a href="/register">Register</a>
-<a href="/login">Login</a>       <main>
-<a href="/admin">Dasboard</a>
-<p class="display-6">Likęs sesijos laikas: ${minutes}:${seconds}</p>`
-
-};
-         
 
 
 return `

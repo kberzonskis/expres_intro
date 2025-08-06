@@ -258,3 +258,6 @@ border-radius: 4px;
 background-color: #c90f16;
 font-style: var(--color-grey);
 }
+.displays-1 { 
+  font-size: medium;
+}

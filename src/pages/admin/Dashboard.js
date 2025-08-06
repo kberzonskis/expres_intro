@@ -35,7 +35,7 @@ return `
 <h1>WLCOME TO DASHBOARD!!!</h1>
 <img class="logo1" src="/img/foto13.jpg" alt="logo" />
 <p class="dash1">USERNAME : ${this.req.user.username}</p>
-<p class="display-6">Likęs sesijos laikas: ${minutes}:${seconds}</p>
+<p class="displays-1">Likęs sesijos laikas: ${minutes}:${seconds}</p>
 
 <div class="products">
 

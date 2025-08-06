@@ -4,8 +4,8 @@ export class PageAbout extends PageTemplate  {
     super(req);
   this.pageHeader ='fullPage'; }
 
-    main() 
-    {  const links = ['Home', 'About', 'Register',];
+  async  main() 
+    {  const links =  ['Home', 'About', 'Register',];
     let linksHTML = ''; 
     for ( const link of links) {
        linksHTML += `<li><a>${link}</a></li>`;

@@ -21,7 +21,7 @@ if (formDOM) {
 
       
 
-        fetch('/api/admin/products', {
+        fetch('/api/admin/newproducts', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -42,7 +42,7 @@ head() { return `
     
 </head> `} ;
 
-main () { return 'Content....'}
+async main () { return 'Content....'}
 
 
 header() {
@@ -62,6 +62,7 @@ return `<header>
     
     <a href="/">Home</a>
     <a href="/about">About</a>
+    <a href="/login">Login</a>
 
 </header>`;}
 
@@ -116,9 +117,11 @@ footerAuth() { return `<footer>
 </footer>` ;}
 
 render()
-
+   
 {
-return `
+
+
+ return `
 <html lang="en">
 ${this.head()}
 

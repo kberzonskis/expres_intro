@@ -14,25 +14,28 @@ this.pageJS= 'new-product';
 
 }
 
+    
 main() {
+if (!this.req.user.isLoggedIn) {
+
+return `
+<p>403- reikia prisijungti</p>
+<a href="/register">Register</a>
+<a href="/login">Login</a>
+<a href="/">back home</a>
+`
+}
 
 const cookie = this.req.user.login_token_created_at.getTime();
 const secondsLeft = Math.floor(COOKIE_MAX_AGE - (Date.now() - cookie) / 1000);
 const seconds = secondsLeft % 60;
 const minutes = (secondsLeft - seconds) / 60;
 
-if (!this.req.user.isLoggedIn) {
 
 return `
-<p>403- reikia prisijungti</p>
-<a href="/">back home</a>
-<a href="/register">Register</a>
-<a href="/login">Login</a>
-`
-}return `
 <main>
-    <a href="/admin">Dasboard</a <p class="display-6">Likęs sesijos laikas: ${minutes}:${seconds}</p>
-
+    <a href="/admin">Dasboard</a> 
+    <p class="displays-1">Likęs sesijos laikas: ${minutes}:${seconds}</p>
     <div>
         </form>
         <h1>NEW PRODUCT</h1>
@@ -49,7 +52,7 @@ return `
             </div>
             <div class="decription">
                 <label for="description" class="decription">Product-Description</label>
-                <textarea class="decription1" id="description"></required>
+                <textarea class="decription1" id="description" required></textarea>
             </div>
 
             <button type="submit" class="button">Create</button>
@@ -57,5 +60,5 @@ return `
     </div>
 
 </main>`;
-}
-}
+
+} }
