@@ -27,8 +27,10 @@ if (formDOM) {
                     location.href = data.href; 
                 } 
               
-
-                console.log(data);
+               console.log(data);
+               
+            
+                
             })
             .catch(console.error); 
     });

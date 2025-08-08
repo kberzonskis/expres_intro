@@ -38,12 +38,10 @@ head() { return `
     <link rel="stylesheet" href="/css/vendor/font-awesome.css">
     <link rel="stylesheet" href="/css/vendor/font-awesome.min.css">
     <link rel="stylesheet" href="/css/bootstrap.css">
-    
-    
+
 </head> `} ;
 
 async main () { return 'Content....'}
-
 
 header() {
 return `<header>
@@ -59,10 +57,11 @@ return `<header>
 
 headerAuth() {
 return `<header>
-    
+
     <a href="/">Home</a>
     <a href="/about">About</a>
     <a href="/login">Login</a>
+    <a href="/admin">Dasboard</a>
 
 </header>`;}
 
@@ -73,10 +72,6 @@ return `<nav>
 </nav>`
 
 }
-
-
-
-
 
 script() { if (!this.pageJS) { return ''; }
 
@@ -98,47 +93,30 @@ footer() { return `<footer>
         <li><i class="fa fa-instagram"></i>Instagram</li>
     </a>
 
-
-
     <p>© 2025 My Website</p>
-   
+
 </footer>` ;}
 
 footerAuth() { return `<footer>
 
-
-
-
     <p>© 2025 My Website</p>
-    
- 
-
 
 </footer>` ;}
 
-render()
-   
+async render()
+
 {
-
-
- return `
+return `
 <html lang="en">
 ${this.head()}
 
-
-
 <body class="bodyDash">
-
-
     ${this.pageHeader === 'fullPage' ? this.header() : this.headerAuth() }
-
     ${this.asideVisible ? this.aSide () : ''}
     <main>
-    
-      
-        ${this.main()}
-    </main>  
-    
+        ${await this.main()}
+    </main>
+
     ${this.pageType === 'fullPage' ? this.footer() : this.footerAuth() }
     ${this.script()}
 </body>

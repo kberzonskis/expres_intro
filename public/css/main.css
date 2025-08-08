@@ -261,3 +261,7 @@ font-style: var(--color-grey);
 .displays-1 { 
   font-size: medium;
 }
+
+.newProducts { 
+  background-color: #2fa6be;
+}

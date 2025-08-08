@@ -18,6 +18,8 @@ export async function postProducts(req, res) {
 
     const { title, url, description } = req.body;
 
+// SQL - VALIDACIJA
+
  try {
         const sql = `SELECT * FROM products WHERE title = ? OR url_slug = ?;`;
         const [response] = await connection.execute(sql, [title, url]);
@@ -25,7 +27,7 @@ export async function postProducts(req, res) {
         if (response.length > 0) {
             return res.status(400).json({
                 status: 'error',
-                msg: 'Tokia kategorija jau egzistuoja',
+                msg: 'Toks irasas jau egzistuoja',
             });
         }
     } catch (error) {
@@ -35,6 +37,9 @@ export async function postProducts(req, res) {
             msg: 'Serverio klaida',
         });
     }
+
+
+// duomenu ikelimas I SQL
 
  try {
         const sql = `

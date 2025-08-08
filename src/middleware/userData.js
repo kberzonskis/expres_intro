@@ -19,7 +19,7 @@ export async function userData(req, res, next) {
                 ON login_tokens.user_id = users.id
             WHERE token = ?;`;
         const [results] = await connection.execute(sql, [req.cookies.loginToken]);
-            console.log(results[0]);
+           
             
 
 

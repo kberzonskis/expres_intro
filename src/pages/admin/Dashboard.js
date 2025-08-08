@@ -44,7 +44,7 @@ return `
   <ul class="nav nav-pills flex-column">
 
     <li class="nav-item">
-      <a class="" aria-current="page" href="/admin/newproducts/">
+      <a class="" aria-current="page" href="/admin/products/new">
         New Product
       </a>
     </li>

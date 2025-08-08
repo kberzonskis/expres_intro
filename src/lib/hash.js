@@ -1,4 +1,4 @@
-import { log } from "console";
+
 import { createHash } from "crypto";
 
 export function hash(text) { 
@@ -11,4 +11,3 @@ catch (error) {
 
 }  
 
-console.log ('---', hash())

@@ -1,8 +1,9 @@
 import { AdminTemplate } from "../../../template/AdminTemplate.js";
 import {COOKIE_MAX_AGE} from "../../../env.js"
+import { getAllProducts_SQL_edit } from "../../../db/get_Product_By_UrlSlug_TO_EDIT.js";
 
 
-export class NewProducts extends AdminTemplate {
+export class AllProductsEdit extends AdminTemplate {
 
 constructor(req) {
 super(req);
@@ -15,7 +16,10 @@ this.pageJS= 'new-product';
 }
 
     
-main() {
+async main() {
+
+const edit_SQLdata = await getAllProducts_SQL_edit(this.req.params.urlSlug);
+
 if (!this.req.user.isLoggedIn) {
 
 return `
@@ -40,24 +44,25 @@ return `
     <p class="displays-1">Likęs sesijos laikas: ${minutes}:${seconds}</p>
     <div>
         </form>
-        <h1>NEW PRODUCT</h1>
+        <h1>EDIT PRODUCT</h1>
 
         <form class="">
           
             <div class="title">
                 <label for="title" class="title">Product-Title</label>
-                <input  type="text" class="" id="title" required>
+                <input value="${edit_SQLdata[0].title}"  id="title" required>
             </div>
             <div class="url">
                 <label for="url" class="url">Url slug</label>
-                <input type="text" class="" id="url" required>
+                <input value="${edit_SQLdata[0].url_slug}" id="url" required>
             </div>
             <div class="decription">
                 <label for="description" class="decription">Product-Description</label>
-                <textarea class="decription1" id="description" required></textarea>
+                <textarea class="decription1" id="description" required>${edit_SQLdata[0].description}</textarea>
             </div>
 
-            <button type="submit" class="button">Create</button>
+            <button type="submit" class="button">Update</button>
+            <button type="reset" class="button">Reset</button>
         </form>
     </div>
 
