@@ -12,6 +12,7 @@ export class PageAbout extends PageTemplate  {
     }
        
     return   ` <h1>SVEIKI DRAUGAI</h1> 
+     <img class="logo" src="/img/about.jpg" alt="logo" />
     <p><i class="fa fa-home"></i> Šis yra paprastas tinklapis, be padailinimu</p>
 
          <ul>${linksHTML}<ul>`

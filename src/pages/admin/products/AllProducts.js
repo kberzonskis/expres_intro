@@ -11,7 +11,7 @@ super(req);
 this.pageType = '';
 this.asideVisible = false;
 this.pageHeader ='';
-this.pageJS = 'product-list'
+this.pageJS = 'delite-product'
 
 }
 

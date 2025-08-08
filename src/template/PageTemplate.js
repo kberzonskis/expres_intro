@@ -44,7 +44,7 @@ head() { return ` <head>
     
     header() {
              return `<header>
-        <img class="logo" src="/img/foto14.jpg" alt="logo" />
+       
         <nav>  
                 <a href="/">Home</a>
                 <a href="/about">About</a>

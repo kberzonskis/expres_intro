@@ -121,12 +121,12 @@ img {
 
 .dash1 {
   font-size: 1.5rem;
-  color: #c90f16;
+  color: #cc2429;
   font-weight: bold;
 }
 
 .bodyDash { 
-background-color: #f1aeae;
+background-color: #eae27d;
 
 }
 .bodyPage { 
@@ -171,7 +171,8 @@ border-radius: 4px;
     gap: 10px; 
     justify-content: center;
     padding: 20px;
-    background-color: #fb5b5b;
+    background-color: #f19191;
+    width: 40%;
 
   }
   .nav { 
@@ -179,8 +180,9 @@ border-radius: 4px;
     
   }
   .button { 
+    margin-top: 8px;
 padding: 2px;
-background-color: #49a3d0;
+background-color: #ddbcac;
 border-radius: 0.3rem;
 
   }
@@ -247,8 +249,8 @@ table.redTable tfoot .links a{
   
 .bg-blue1 { 
   border-radius: 4px;
-background-color: #fbf845;
-width: 15%;
+background-color: #f68011;
+width: 20%
   
 
 }
@@ -263,5 +265,5 @@ font-style: var(--color-grey);
 }
 
 .newProducts { 
-  background-color: #2fa6be;
+  
 }

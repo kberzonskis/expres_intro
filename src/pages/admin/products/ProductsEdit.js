@@ -11,7 +11,7 @@ super(req);
 this.pageType = '';
 this.asideVisible = false;
 this.pageHeader ='';
-this.pageJS= 'new-product'; 
+this.pageJS= 'edit-product'; 
 
 }
 
@@ -47,6 +47,7 @@ return `
         <h1>EDIT PRODUCT</h1>
 
         <form class="">
+        <input value="${edit_SQLdata[0].url_slug}" id="original_url" hidden>
           
             <div class="title">
                 <label for="title" class="title">Product-Title</label>

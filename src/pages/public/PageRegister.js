@@ -11,6 +11,9 @@ export class PageRegister extends PageTemplate {
   }
 
   main() {  return  ` 
+
+
+           <img class="logo1" src="/img/register.webp" alt="logo" />
           ${registerForm()}
           <a href="/">back home</a>
           <a href="/login">Login</a>
